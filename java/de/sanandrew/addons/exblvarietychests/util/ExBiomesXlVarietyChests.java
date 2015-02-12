@@ -22,7 +22,7 @@ import net.minecraft.util.ResourceLocation;
      dependencies = "required-after:varietychests@[1.2.0,);required-after:ExtrabiomesXL")
 public final class ExBiomesXlVarietyChests
 {
-    public static final String MOD_ID = "exblvarchests";
+    public static final String MOD_ID = "ebxlvarchests";
     public static final String VERSION = "1.0.1";
 
     @Instance(MOD_ID)

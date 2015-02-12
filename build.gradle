@@ -9,27 +9,16 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven {
-            name = 'SAPManPack-deobf'
-            url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
-        }
-        maven {
-            name = 'VarietyChests'
-            url = 'https://github.com/SanAndreasP/VarietyChests/raw/master/maven-repo/'
-        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-        classpath 'de.sanandrew.core.manpack:SAPManPack-deobf:1.7.10-2.4.0'
-        classpath 'de.sanandrew.mods.varietychests:VarietyChests:1.7.10-1.2.0@src'
-		classpath fileTree(dir: 'libs', include: ['extrabiomesxl_*-dev.jar'])
     }
 }
 
 apply plugin: 'forge'
 
 version = "1.7.10-1.0.0"
-group = "de.sanandrew.addons.varietychests.addon.ebxl"
+group = "de.sanandrew.addons"
 archivesBaseName = 'VarietyChests-EBXL-AddOn'
 
 minecraft {
@@ -38,10 +27,10 @@ minecraft {
 }
 
 repositories {
-    maven {
-        name = 'SAPManPack-deobf'
-        url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
-    }
+	maven {
+		name = 'SAPManagerPack'
+		url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
+	}
 	maven {
 		name = 'VarietyChests'
 		url = 'https://github.com/SanAndreasP/VarietyChests/raw/master/maven-repo/'
@@ -49,8 +38,7 @@ repositories {
 }
 
 dependencies {
-    compile 'de.sanandrew.core.manpack:SAPManPack-deobf:1.7.10-2.4.0'
-	compile 'de.sanandrew.core.manpack:VarietyChests:1.7.10-1.2.0@deobf'
+	compile 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
 	compile fileTree(dir: 'libs', include: ['extrabiomesxl_*-dev.jar'])
 }
 
