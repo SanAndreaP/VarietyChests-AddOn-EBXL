@@ -9,15 +9,25 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+		maven {
+			name = 'SAPManagerPack'
+			url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
+		}
+		maven {
+			name = 'VarietyChests'
+			url = 'https://github.com/SanAndreasP/VarietyChests/raw/master/maven-repo/'
+		}
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
+		classpath fileTree(dir: 'deps', include: ['extrabiomesxl_*-dev.jar'])
     }
 }
 
 apply plugin: 'forge'
 
-version = "1.7.10-1.0.0"
+version = "1.7.10-1.0.1"
 group = "de.sanandrew.addons"
 archivesBaseName = 'VarietyChests-EBXL-AddOn'
 
@@ -38,8 +48,8 @@ repositories {
 }
 
 dependencies {
-	compile 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
-	compile fileTree(dir: 'libs', include: ['extrabiomesxl_*-dev.jar'])
+    compile 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
+	compile fileTree(dir: 'deps', include: ['extrabiomesxl_*-dev.jar'])
 }
 
 processResources {
@@ -58,7 +68,6 @@ processResources {
 
 sourceSets {
     main {
-		output.resourcesDir = output.classesDir
         java { srcDir 'java' }
         resources { srcDir 'resources' }
     }
