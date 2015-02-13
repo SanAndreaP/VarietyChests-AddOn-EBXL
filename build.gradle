@@ -22,24 +22,24 @@ group = "de.sanandrew.addons"
 archivesBaseName = 'VarietyChests-EBXL-AddOn'
 
 minecraft {
-	version = "1.7.10-10.13.2.1286"
+    version = "1.7.10-10.13.2.1286"
     runDir = "eclipse"
 }
 
 repositories {
-	maven {
-		name = 'SAPManagerPack'
-		url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
-	}
-	maven {
-		name = 'VarietyChests'
-		url = 'https://github.com/SanAndreasP/VarietyChests/raw/master/maven-repo/'
-	}
+    maven {
+        name = 'SAPManagerPack'
+        url = 'https://github.com/SanAndreasP/SAPManagerPack/raw/master/maven-repo/'
+    }
+    maven {
+        name = 'VarietyChests'
+        url = 'https://github.com/SanAndreasP/VarietyChests/raw/master/maven-repo/'
+    }
 }
 
 dependencies {
-	compile 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
-	compile fileTree(dir: 'libs', include: ['extrabiomesxl_*-dev.jar'])
+    compile 'de.sanandrew.mods:VarietyChests:1.7.10-1.2.0-deobf'
+    compile fileTree(dir: 'libs', include: ['extrabiomesxl_*-dev.jar'])
 }
 
 processResources {
@@ -58,7 +58,7 @@ processResources {
 
 sourceSets {
     main {
-		output.resourcesDir = output.classesDir
+        output.resourcesDir = output.classesDir
         java { srcDir 'java' }
         resources { srcDir 'resources' }
     }
@@ -80,7 +80,7 @@ task deobfJar(type: Jar) {
 }
 
 artifacts {
-	archives deobfJar
-	archives sourceJar
-	archives jar
+    archives deobfJar
+    archives sourceJar
+    archives jar
 }
